@@ -1,5 +1,5 @@
 {
-	"name": "sales_orderupdates",
+	"name": "source_sales_orderupdates",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "source_sales",
