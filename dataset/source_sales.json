@@ -5,6 +5,9 @@
 			"referenceName": "source_sales",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "sales"
+		},
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"schema": []

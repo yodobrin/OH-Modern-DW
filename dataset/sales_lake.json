@@ -5,6 +5,9 @@
 			"referenceName": "sales_lake",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "sales"
+		},
 		"annotations": [],
 		"type": "Parquet",
 		"typeProperties": {
