@@ -1,0 +1,53 @@
+{
+	"name": "source_sales_orderdetails",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "source_sales",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "OrderDetailID",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "OrderID",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "MovieID",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "Quantity",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "UnitCost",
+				"type": "money",
+				"precision": 19,
+				"scale": 4
+			},
+			{
+				"name": "LineNumber",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "CreatedDate",
+				"type": "date"
+			},
+			{
+				"name": "UpdatedDate",
+				"type": "date"
+			}
+		],
+		"typeProperties": {
+			"schema": "Hidden",
+			"table": "OrderDetails"
+		}
+	}
+}
