@@ -1,0 +1,57 @@
+{
+	"name": "source_movies",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "source_movies",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "movies"
+		},
+		"annotations": [],
+		"type": "CosmosDbSqlApiCollection",
+		"schema": {
+			"type": "object",
+			"properties": {
+				"actors": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"name": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"availabilityDate": {
+					"type": "string"
+				},
+				"genre": {
+					"type": "string"
+				},
+				"rating": {
+					"type": "string"
+				},
+				"releaseYear": {
+					"type": "integer"
+				},
+				"runtime": {
+					"type": "integer"
+				},
+				"streamingAvailabilityDate": {
+					"type": "string"
+				},
+				"tier": {
+					"type": "integer"
+				},
+				"title": {
+					"type": "string"
+				}
+			}
+		},
+		"typeProperties": {
+			"collectionName": "movies"
+		}
+	}
+}

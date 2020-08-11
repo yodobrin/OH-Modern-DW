@@ -1,0 +1,23 @@
+{
+	"name": "streaming_lake",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "streaming_lake",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "streaming"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "@{item().Table_Name}",
+				"fileSystem": "cloud-streaming"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}

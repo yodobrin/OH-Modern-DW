@@ -1,0 +1,15 @@
+{
+	"name": "source_streaming",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "source_streaming",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "streaming"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}

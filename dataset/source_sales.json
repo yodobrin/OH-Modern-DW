@@ -1,0 +1,15 @@
+{
+	"name": "source_sales",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "source_sales",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "sales"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}

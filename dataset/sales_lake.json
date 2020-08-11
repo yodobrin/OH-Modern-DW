@@ -1,0 +1,26 @@
+{
+	"name": "sales_lake",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "sales_lake",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "sales"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@{item().Table_Name}",
+					"type": "Expression"
+				},
+				"fileSystem": "cloud-sales"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
