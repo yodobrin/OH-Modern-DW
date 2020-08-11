@@ -1,0 +1,20 @@
+{
+	"name": "sales_lake",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "sales_lake",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "orders",
+				"fileSystem": "cloud-sales"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
