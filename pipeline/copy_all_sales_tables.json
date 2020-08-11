@@ -42,7 +42,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('Get Tables').output",
+						"value": "@activity('Get Tables').output.value",
 						"type": "Expression"
 					},
 					"activities": [
