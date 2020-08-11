@@ -90,7 +90,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "sales_lake",
+									"referenceName": "streaming_lake",
 									"type": "DatasetReference"
 								}
 							]
