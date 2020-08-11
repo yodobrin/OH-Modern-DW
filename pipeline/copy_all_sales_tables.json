@@ -24,7 +24,8 @@
 					"dataset": {
 						"referenceName": "source_sales",
 						"type": "DatasetReference"
-					}
+					},
+					"firstRowOnly": false
 				}
 			},
 			{
