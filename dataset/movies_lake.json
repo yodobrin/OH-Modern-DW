@@ -1,0 +1,23 @@
+{
+	"name": "movies_lake",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "movies_lake",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "movies"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "@{item().Table_Name}",
+				"fileSystem": "movies"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
