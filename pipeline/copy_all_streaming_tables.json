@@ -17,7 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "SELECT distinct 'dbo'+'.'+TABLE_NAME AS Table_Name \nFROM information_Schema.tables",
+						"sqlReaderQuery": "SELECT distinct 'dbo'+'.'+TABLE_NAME AS Table_Name \nFROM information_Schema.tables\nwhere Table_Name not in ('AddressUpdates','database_firewall_rules','CustomerUpdates','OrderUpdates')",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
