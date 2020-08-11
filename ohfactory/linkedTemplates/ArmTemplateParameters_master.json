@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ohfactory"
+		},
+		"sales_lake_accountKey": {
+			"value": ""
+		},
+		"source_sales_connectionString": {
+			"value": ""
+		},
+		"streaming_lake_accountKey": {
+			"value": ""
+		},
+		"source_streaming_connectionString": {
+			"value": ""
+		},
+		"movies_lake_accountKey": {
+			"value": ""
+		},
+		"source_movies_connectionString": {
+			"value": ""
+		},
+		"sales_lake_properties_typeProperties_url": {
+			"value": "https://ohstoragelake.dfs.core.windows.net"
+		},
+		"streaming_lake_properties_typeProperties_url": {
+			"value": "https://ohstoragelake.dfs.core.windows.net"
+		},
+		"movies_lake_properties_typeProperties_url": {
+			"value": "https://ohstoragelake.dfs.core.windows.net"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

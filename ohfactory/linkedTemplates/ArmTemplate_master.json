@@ -1,0 +1,105 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "ohfactory"
+		},
+		"sales_lake_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'sales_lake'"
+		},
+		"source_sales_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'source_sales'"
+		},
+		"streaming_lake_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'streaming_lake'"
+		},
+		"source_streaming_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'source_streaming'"
+		},
+		"movies_lake_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'movies_lake'"
+		},
+		"source_movies_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'source_movies'"
+		},
+		"sales_lake_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://ohstoragelake.dfs.core.windows.net"
+		},
+		"streaming_lake_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://ohstoragelake.dfs.core.windows.net"
+		},
+		"movies_lake_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://ohstoragelake.dfs.core.windows.net"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"sales_lake_accountKey": {
+						"value": "[parameters('sales_lake_accountKey')]"
+					},
+					"source_sales_connectionString": {
+						"value": "[parameters('source_sales_connectionString')]"
+					},
+					"streaming_lake_accountKey": {
+						"value": "[parameters('streaming_lake_accountKey')]"
+					},
+					"source_streaming_connectionString": {
+						"value": "[parameters('source_streaming_connectionString')]"
+					},
+					"movies_lake_accountKey": {
+						"value": "[parameters('movies_lake_accountKey')]"
+					},
+					"source_movies_connectionString": {
+						"value": "[parameters('source_movies_connectionString')]"
+					},
+					"sales_lake_properties_typeProperties_url": {
+						"value": "[parameters('sales_lake_properties_typeProperties_url')]"
+					},
+					"streaming_lake_properties_typeProperties_url": {
+						"value": "[parameters('streaming_lake_properties_typeProperties_url')]"
+					},
+					"movies_lake_properties_typeProperties_url": {
+						"value": "[parameters('movies_lake_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
