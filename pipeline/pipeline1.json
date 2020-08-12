@@ -28,10 +28,14 @@
 						}
 					},
 					"sink": {
-						"type": "ParquetSink",
+						"type": "DelimitedTextSink",
 						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings",
-							"copyBehavior": "PreserveHierarchy"
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
 						}
 					},
 					"enableStaging": false,
@@ -45,8 +49,8 @@
 									"ordinal": 1
 								},
 								"sink": {
-									"name": "Column1",
-									"type": "String"
+									"type": "String",
+									"ordinal": 1
 								}
 							},
 							{
@@ -56,8 +60,8 @@
 									"ordinal": 2
 								},
 								"sink": {
-									"name": "Column2",
-									"type": "String"
+									"type": "String",
+									"ordinal": 2
 								}
 							},
 							{
@@ -67,8 +71,8 @@
 									"ordinal": 3
 								},
 								"sink": {
-									"name": "Column3",
-									"type": "String"
+									"type": "String",
+									"ordinal": 3
 								}
 							}
 						],
@@ -87,7 +91,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "rentals_lake",
+						"referenceName": "rentals_lake_csv",
 						"type": "DatasetReference"
 					}
 				]
