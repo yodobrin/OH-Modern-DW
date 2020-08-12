@@ -12,7 +12,8 @@
 		"type": "Parquet",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobFSLocation"
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "cloud-rentals"
 			},
 			"compressionCodec": "snappy"
 		},
