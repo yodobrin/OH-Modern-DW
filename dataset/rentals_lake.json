@@ -1,0 +1,21 @@
+{
+	"name": "rentals_lake",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "source_lake",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "FileVM"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
