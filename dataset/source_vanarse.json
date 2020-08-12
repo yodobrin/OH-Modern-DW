@@ -1,0 +1,15 @@
+{
+	"name": "source_vanarse",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "source_vanarse",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SqlVM"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": []
+	}
+}
