@@ -1,5 +1,5 @@
 {
-	"name": "pipeline1",
+	"name": "copy_rentals2lake",
 	"properties": {
 		"activities": [
 			{
