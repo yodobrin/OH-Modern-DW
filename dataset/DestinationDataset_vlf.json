@@ -1,0 +1,28 @@
+{
+	"name": "DestinationDataset_vlf",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "movies_lake",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"cw_fileName": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().cw_fileName",
+					"type": "Expression"
+				},
+				"fileSystem": "cloud-vanarse"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}

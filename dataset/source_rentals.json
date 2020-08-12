@@ -1,0 +1,24 @@
+{
+	"name": "source_rentals",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "file_vm",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "FileVM"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "FileServerLocation",
+				"folderPath": "OnPremRentalsCSV"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}

@@ -1,0 +1,6 @@
+{
+	"name": "SqlVM",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
