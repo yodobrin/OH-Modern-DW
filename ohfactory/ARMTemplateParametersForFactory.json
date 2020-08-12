@@ -5,31 +5,64 @@
 		"factoryName": {
 			"value": "ohfactory"
 		},
-		"sales_lake_accountKey": {
+		"FileServer1_password": {
 			"value": ""
 		},
-		"source_sales_connectionString": {
-			"value": ""
-		},
-		"streaming_lake_accountKey": {
-			"value": ""
-		},
-		"source_streaming_connectionString": {
+		"file_vm_password": {
 			"value": ""
 		},
 		"movies_lake_accountKey": {
 			"value": ""
 		},
+		"renatls_lake_csv_accountKey": {
+			"value": ""
+		},
+		"sales_lake_accountKey": {
+			"value": ""
+		},
+		"source_lake_accountKey": {
+			"value": ""
+		},
 		"source_movies_connectionString": {
 			"value": ""
+		},
+		"source_sales_connectionString": {
+			"value": ""
+		},
+		"source_streaming_connectionString": {
+			"value": ""
+		},
+		"source_vanarse_connectionString": {
+			"value": ""
+		},
+		"streaming_lake_accountKey": {
+			"value": ""
+		},
+		"FileServer1_properties_typeProperties_host": {
+			"value": "C:\\Rentals"
+		},
+		"FileServer1_properties_typeProperties_userId": {
+			"value": "openhackadmin"
+		},
+		"file_vm_properties_typeProperties_host": {
+			"value": "C:\\Rentals"
+		},
+		"file_vm_properties_typeProperties_userId": {
+			"value": "openhackadmin"
+		},
+		"movies_lake_properties_typeProperties_url": {
+			"value": "https://ohstoragelake.dfs.core.windows.net"
+		},
+		"renatls_lake_csv_properties_typeProperties_url": {
+			"value": "https://ohstoragelake.dfs.core.windows.net"
 		},
 		"sales_lake_properties_typeProperties_url": {
 			"value": "https://ohstoragelake.dfs.core.windows.net"
 		},
-		"streaming_lake_properties_typeProperties_url": {
+		"source_lake_properties_typeProperties_url": {
 			"value": "https://ohstoragelake.dfs.core.windows.net"
 		},
-		"movies_lake_properties_typeProperties_url": {
+		"streaming_lake_properties_typeProperties_url": {
 			"value": "https://ohstoragelake.dfs.core.windows.net"
 		}
 	}

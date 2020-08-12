@@ -7,39 +7,83 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "ohfactory"
 		},
-		"sales_lake_accountKey": {
+		"FileServer1_password": {
 			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'sales_lake'"
+			"metadata": "Secure string for 'password' of 'FileServer1'"
 		},
-		"source_sales_connectionString": {
+		"file_vm_password": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'source_sales'"
-		},
-		"streaming_lake_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'streaming_lake'"
-		},
-		"source_streaming_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'source_streaming'"
+			"metadata": "Secure string for 'password' of 'file_vm'"
 		},
 		"movies_lake_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'movies_lake'"
 		},
+		"renatls_lake_csv_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'renatls_lake_csv'"
+		},
+		"sales_lake_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'sales_lake'"
+		},
+		"source_lake_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'source_lake'"
+		},
 		"source_movies_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'source_movies'"
+		},
+		"source_sales_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'source_sales'"
+		},
+		"source_streaming_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'source_streaming'"
+		},
+		"source_vanarse_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'source_vanarse'"
+		},
+		"streaming_lake_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'streaming_lake'"
+		},
+		"FileServer1_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "C:\\Rentals"
+		},
+		"FileServer1_properties_typeProperties_userId": {
+			"type": "string",
+			"defaultValue": "openhackadmin"
+		},
+		"file_vm_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "C:\\Rentals"
+		},
+		"file_vm_properties_typeProperties_userId": {
+			"type": "string",
+			"defaultValue": "openhackadmin"
+		},
+		"movies_lake_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://ohstoragelake.dfs.core.windows.net"
+		},
+		"renatls_lake_csv_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://ohstoragelake.dfs.core.windows.net"
 		},
 		"sales_lake_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://ohstoragelake.dfs.core.windows.net"
 		},
-		"streaming_lake_properties_typeProperties_url": {
+		"source_lake_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://ohstoragelake.dfs.core.windows.net"
 		},
-		"movies_lake_properties_typeProperties_url": {
+		"streaming_lake_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://ohstoragelake.dfs.core.windows.net"
 		},
@@ -70,36 +114,89 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"movies_lake_accountKey": {
+						"value": "[parameters('movies_lake_accountKey')]"
+					},
+					"renatls_lake_csv_accountKey": {
+						"value": "[parameters('renatls_lake_csv_accountKey')]"
+					},
 					"sales_lake_accountKey": {
 						"value": "[parameters('sales_lake_accountKey')]"
 					},
-					"source_sales_connectionString": {
-						"value": "[parameters('source_sales_connectionString')]"
-					},
-					"streaming_lake_accountKey": {
-						"value": "[parameters('streaming_lake_accountKey')]"
-					},
-					"source_streaming_connectionString": {
-						"value": "[parameters('source_streaming_connectionString')]"
-					},
-					"movies_lake_accountKey": {
-						"value": "[parameters('movies_lake_accountKey')]"
+					"source_lake_accountKey": {
+						"value": "[parameters('source_lake_accountKey')]"
 					},
 					"source_movies_connectionString": {
 						"value": "[parameters('source_movies_connectionString')]"
 					},
+					"source_sales_connectionString": {
+						"value": "[parameters('source_sales_connectionString')]"
+					},
+					"source_streaming_connectionString": {
+						"value": "[parameters('source_streaming_connectionString')]"
+					},
+					"streaming_lake_accountKey": {
+						"value": "[parameters('streaming_lake_accountKey')]"
+					},
+					"FileServer1_password": {
+						"value": "[parameters('FileServer1_password')]"
+					},
+					"movies_lake_properties_typeProperties_url": {
+						"value": "[parameters('movies_lake_properties_typeProperties_url')]"
+					},
+					"renatls_lake_csv_properties_typeProperties_url": {
+						"value": "[parameters('renatls_lake_csv_properties_typeProperties_url')]"
+					},
 					"sales_lake_properties_typeProperties_url": {
 						"value": "[parameters('sales_lake_properties_typeProperties_url')]"
+					},
+					"source_lake_properties_typeProperties_url": {
+						"value": "[parameters('source_lake_properties_typeProperties_url')]"
 					},
 					"streaming_lake_properties_typeProperties_url": {
 						"value": "[parameters('streaming_lake_properties_typeProperties_url')]"
 					},
-					"movies_lake_properties_typeProperties_url": {
-						"value": "[parameters('movies_lake_properties_typeProperties_url')]"
+					"FileServer1_properties_typeProperties_host": {
+						"value": "[parameters('FileServer1_properties_typeProperties_host')]"
+					},
+					"FileServer1_properties_typeProperties_userId": {
+						"value": "[parameters('FileServer1_properties_typeProperties_userId')]"
 					}
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"file_vm_password": {
+						"value": "[parameters('file_vm_password')]"
+					},
+					"source_vanarse_connectionString": {
+						"value": "[parameters('source_vanarse_connectionString')]"
+					},
+					"file_vm_properties_typeProperties_host": {
+						"value": "[parameters('file_vm_properties_typeProperties_host')]"
+					},
+					"file_vm_properties_typeProperties_userId": {
+						"value": "[parameters('file_vm_properties_typeProperties_userId')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ArmTemplate_0')]"
+			]
 		}
 	]
 }
