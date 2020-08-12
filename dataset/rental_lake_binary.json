@@ -1,0 +1,20 @@
+{
+	"name": "rental_lake_binary",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "movies_lake",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "FileVM"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "cloud-rentals"
+			}
+		}
+	}
+}
