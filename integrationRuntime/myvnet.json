@@ -1,0 +1,6 @@
+{
+	"name": "myvnet",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
