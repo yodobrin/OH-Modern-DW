@@ -1,0 +1,6 @@
+{
+	"name": "vnetintegrationRuntime",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
