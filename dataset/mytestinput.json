@@ -1,0 +1,50 @@
+{
+	"name": "mytestinput",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "non_secured",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "demolake"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "20200615122400-OrderHeaderDetails.csv",
+				"container": "myshit"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			}
+		]
+	}
+}
