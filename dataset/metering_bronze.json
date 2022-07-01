@@ -1,0 +1,23 @@
+{
+	"name": "metering_bronze",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "meteringraw",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "metering"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "bronze"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

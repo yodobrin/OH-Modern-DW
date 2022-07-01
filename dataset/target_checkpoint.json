@@ -1,0 +1,22 @@
+{
+	"name": "target_checkpoint",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "meteringraw",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "martin-meter"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "checkpoint",
+				"fileSystem": "martin-raw"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

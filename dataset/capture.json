@@ -1,0 +1,21 @@
+{
+	"name": "capture",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "martin_raw",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "martin-meter"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "capture"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

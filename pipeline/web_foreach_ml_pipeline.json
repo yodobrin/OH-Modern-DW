@@ -1,0 +1,112 @@
+{
+	"name": "web_foreach_ml_pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "Azure Function - GetList",
+				"type": "AzureFunctionActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"functionName": "GetList",
+					"method": "POST",
+					"body": {
+						"size": 3
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "sample_functions",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "ForEach from azure function",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "Azure Function - GetList",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('Azure Function - GetList').output.items",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "save2blob",
+							"type": "AzureFunctionActivity",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"functionName": "Save2Blob",
+								"method": "POST",
+								"body": {
+									"value": "@concat('{\n\"name\":\"',item().name,'\",\"container_name\": \"default\",','\"blob_body\":\"', item().address,'\"}')",
+									"type": "Expression"
+								}
+							},
+							"linkedServiceName": {
+								"referenceName": "sample_functions",
+								"type": "LinkedServiceReference"
+							}
+						},
+						{
+							"name": "sample_pipe_line",
+							"type": "AzureMLExecutePipeline",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"experimentName": "adf_sample_runs",
+								"mlPipelineParameters": {
+									"1st_string": {
+										"value": "@item().name",
+										"type": "Expression"
+									},
+									"2nd_string": {
+										"value": "@item().address",
+										"type": "Expression"
+									},
+									"input_datapath": "aml_data/sample_datapath1"
+								},
+								"mlPipelineId": "f5c89484-cc44-4272-a8b7-444fdd31e76b"
+							},
+							"linkedServiceName": {
+								"referenceName": "AzureMLService1",
+								"type": "LinkedServiceReference"
+							}
+						}
+					]
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2021-07-07T15:44:18Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

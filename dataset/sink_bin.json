@@ -1,0 +1,22 @@
+{
+	"name": "sink_bin",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "nolake",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@concat(item().id,'_',guid())",
+					"type": "Expression"
+				},
+				"container": "crap"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

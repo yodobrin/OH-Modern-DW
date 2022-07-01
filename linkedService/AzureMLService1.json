@@ -1,0 +1,16 @@
+{
+	"name": "AzureMLService1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureMLService",
+		"typeProperties": {
+			"subscriptionId": "779b3f2b-726d-430d-a1b7-f8c309b3bbd0",
+			"resourceGroupName": "amls",
+			"mlWorkspaceName": "yd-amls",
+			"servicePrincipalId": "9b98afc6-42ad-45af-96fc-d6cf6a174f6a",
+			"tenant": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIllERkFDVE9SWV80Y2VkNTdhYy1mODg5LTQyZmQtOWUyYi01MDNiZTYxNDFiOTQiDQp9"
+		}
+	}
+}

@@ -1,0 +1,28 @@
+{
+	"name": "DataFlow_ydatalake2nolake",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "CSV",
+						"type": "DatasetReference"
+					},
+					"name": "ydatalake"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "CSV_Parquet",
+						"type": "DatasetReference"
+					},
+					"name": "nolake"
+				}
+			],
+			"transformations": [],
+			"script": "source(output(\n\t\tid as string,\n\t\tName as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> ydatalake\nydatalake sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tformat: 'parquet',\n\tpartitionFileNames:['CSV_Parquet.parquet'],\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true,\n\tpartitionBy('hash', 1)) ~> nolake"
+		}
+	}
+}

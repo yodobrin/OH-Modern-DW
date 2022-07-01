@@ -1,0 +1,20 @@
+{
+	"name": "CSV_Parquet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "nolake",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "target"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

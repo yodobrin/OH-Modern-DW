@@ -1,0 +1,9 @@
+{
+	"name": "ydfactory",
+	"location": "northeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "1c41a83c-da79-4100-bad1-ed306f4ef349",
+		"tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+	}
+}

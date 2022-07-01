@@ -1,0 +1,25 @@
+{
+	"name": "snapshot_json",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "martin_raw",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "martin-meter"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "snapshots"
+			},
+			"compression": {
+				"type": "gzip"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

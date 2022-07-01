@@ -1,0 +1,17 @@
+{
+	"name": "trgDW",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "KGDW",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "TestYoav"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

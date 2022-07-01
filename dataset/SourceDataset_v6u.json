@@ -1,0 +1,19 @@
+{
+	"name": "SourceDataset_v6u",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ydatalake",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "Test4Yoav.csv",
+				"fileSystem": "target"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

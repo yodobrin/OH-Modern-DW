@@ -1,0 +1,19 @@
+{
+	"name": "SourceDataset_71k",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "nolake",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Test4Yoav.csv",
+				"container": "source"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
