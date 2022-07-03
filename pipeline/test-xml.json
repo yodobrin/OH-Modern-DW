@@ -1,0 +1,9 @@
+{
+	"name": "test-xml",
+	"properties": {
+		"folder": {
+			"name": "service-lead-validation"
+		},
+		"annotations": []
+	}
+}

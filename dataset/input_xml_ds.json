@@ -1,0 +1,21 @@
+{
+	"name": "input_xml_ds",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "service_lead_tests",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "service-lead-validation"
+		},
+		"annotations": [],
+		"type": "Xml",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "sample.xml",
+				"fileSystem": "xml"
+			}
+		}
+	}
+}
