@@ -1,0 +1,508 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "ydfactory"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+		},
+		"AzureDatabricks_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks'"
+		},
+		"AzureFileStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureFileStorage1'"
+		},
+		"AzureFunction1_functionKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'functionKey' of 'AzureFunction1'"
+		},
+		"AzureFunction2_functionKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'functionKey' of 'AzureFunction2'"
+		},
+		"AzureMLService1_servicePrincipalKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalKey' of 'AzureMLService1'"
+		},
+		"FileServer1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'FileServer1'"
+		},
+		"GetList_functionKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'functionKey' of 'GetList'"
+		},
+		"KGDW_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'KGDW'"
+		},
+		"file_vm_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'file_vm'"
+		},
+		"iddspoke_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'iddspoke'"
+		},
+		"martin_raw_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'martin_raw'"
+		},
+		"meteringraw_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'meteringraw'"
+		},
+		"movies_lake_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'movies_lake'"
+		},
+		"nolake_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'nolake'"
+		},
+		"renatls_lake_csv_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'renatls_lake_csv'"
+		},
+		"sales_lake_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'sales_lake'"
+		},
+		"sample_functions_functionKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'functionKey' of 'sample_functions'"
+		},
+		"source_lake_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'source_lake'"
+		},
+		"source_movies_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'source_movies'"
+		},
+		"source_sales_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'source_sales'"
+		},
+		"source_streaming_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'source_streaming'"
+		},
+		"source_vanarse_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'source_vanarse'"
+		},
+		"streaming_lake_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'streaming_lake'"
+		},
+		"ydatalake_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ydatalake'"
+		},
+		"ydsqlserver_address_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ydsqlserver_address'"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://ydblobdatastore.dfs.core.windows.net"
+		},
+		"AzureFunction1_properties_typeProperties_functionAppUrl": {
+			"type": "string",
+			"defaultValue": "https://teva-func.azurewebsites.net"
+		},
+		"AzureFunction2_properties_typeProperties_functionAppUrl": {
+			"type": "string",
+			"defaultValue": "https://ydemofunc.azurewebsites.net/api/"
+		},
+		"AzureMLService1_properties_typeProperties_subscriptionId": {
+			"type": "string",
+			"defaultValue": "779b3f2b-726d-430d-a1b7-f8c309b3bbd0"
+		},
+		"AzureMLService1_properties_typeProperties_resourceGroupName": {
+			"type": "string",
+			"defaultValue": "amls"
+		},
+		"AzureMLService1_properties_typeProperties_mlWorkspaceName": {
+			"type": "string",
+			"defaultValue": "yd-amls"
+		},
+		"AzureMLService1_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "9b98afc6-42ad-45af-96fc-d6cf6a174f6a"
+		},
+		"AzureMLService1_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+		},
+		"FileServer1_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "C:\\Rentals"
+		},
+		"FileServer1_properties_typeProperties_userId": {
+			"type": "string",
+			"defaultValue": "openhackadmin"
+		},
+		"GetList_properties_typeProperties_functionAppUrl": {
+			"type": "string",
+			"defaultValue": "https://sample-mdw-functions.azurewebsites.net"
+		},
+		"RestService1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://api.twitter.com/2/tweets/"
+		},
+		"file_vm_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "C:\\Rentals"
+		},
+		"file_vm_properties_typeProperties_userId": {
+			"type": "string",
+			"defaultValue": "openhackadmin"
+		},
+		"martin_raw_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://saasproductonesa.dfs.core.windows.net"
+		},
+		"meteringraw_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://ydlakehouse.dfs.core.windows.net"
+		},
+		"movies_lake_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://ohstoragelake.dfs.core.windows.net"
+		},
+		"renatls_lake_csv_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://ohstoragelake.dfs.core.windows.net"
+		},
+		"sales_lake_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://ohstoragelake.dfs.core.windows.net"
+		},
+		"sample_functions_properties_typeProperties_functionAppUrl": {
+			"type": "string",
+			"defaultValue": "https://sample-mdw-functions.azurewebsites.net"
+		},
+		"source_lake_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://ohstoragelake.dfs.core.windows.net"
+		},
+		"streaming_lake_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://ohstoragelake.dfs.core.windows.net"
+		},
+		"ydatalake_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://ydatalake.dfs.core.windows.net"
+		},
+		"ydatalake_properties_privateLinkResourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/779b3f2b-726d-430d-a1b7-f8c309b3bbd0/resourceGroups/mylake/providers/Microsoft.Storage/storageAccounts/ydatalake"
+		},
+		"ydatalake_properties_groupId": {
+			"type": "string",
+			"defaultValue": "dfs"
+		},
+		"ydatalake_properties_fqdns": {
+			"type": "array",
+			"defaultValue": [
+				"ydatalake.dfs.core.windows.net"
+			]
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "ydfactory_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureDataLakeStorage1_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					},
+					"AzureDatabricks_accessToken": {
+						"value": "[parameters('AzureDatabricks_accessToken')]"
+					},
+					"AzureFileStorage1_connectionString": {
+						"value": "[parameters('AzureFileStorage1_connectionString')]"
+					},
+					"AzureFunction1_functionKey": {
+						"value": "[parameters('AzureFunction1_functionKey')]"
+					},
+					"AzureMLService1_servicePrincipalKey": {
+						"value": "[parameters('AzureMLService1_servicePrincipalKey')]"
+					},
+					"GetList_functionKey": {
+						"value": "[parameters('GetList_functionKey')]"
+					},
+					"KGDW_connectionString": {
+						"value": "[parameters('KGDW_connectionString')]"
+					},
+					"iddspoke_connectionString": {
+						"value": "[parameters('iddspoke_connectionString')]"
+					},
+					"martin_raw_accountKey": {
+						"value": "[parameters('martin_raw_accountKey')]"
+					},
+					"meteringraw_accountKey": {
+						"value": "[parameters('meteringraw_accountKey')]"
+					},
+					"movies_lake_accountKey": {
+						"value": "[parameters('movies_lake_accountKey')]"
+					},
+					"nolake_connectionString": {
+						"value": "[parameters('nolake_connectionString')]"
+					},
+					"renatls_lake_csv_accountKey": {
+						"value": "[parameters('renatls_lake_csv_accountKey')]"
+					},
+					"sales_lake_accountKey": {
+						"value": "[parameters('sales_lake_accountKey')]"
+					},
+					"sample_functions_functionKey": {
+						"value": "[parameters('sample_functions_functionKey')]"
+					},
+					"source_lake_accountKey": {
+						"value": "[parameters('source_lake_accountKey')]"
+					},
+					"source_movies_connectionString": {
+						"value": "[parameters('source_movies_connectionString')]"
+					},
+					"AzureDataLakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"AzureFunction1_properties_typeProperties_functionAppUrl": {
+						"value": "[parameters('AzureFunction1_properties_typeProperties_functionAppUrl')]"
+					},
+					"AzureMLService1_properties_typeProperties_subscriptionId": {
+						"value": "[parameters('AzureMLService1_properties_typeProperties_subscriptionId')]"
+					},
+					"AzureMLService1_properties_typeProperties_resourceGroupName": {
+						"value": "[parameters('AzureMLService1_properties_typeProperties_resourceGroupName')]"
+					},
+					"AzureMLService1_properties_typeProperties_mlWorkspaceName": {
+						"value": "[parameters('AzureMLService1_properties_typeProperties_mlWorkspaceName')]"
+					},
+					"AzureMLService1_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('AzureMLService1_properties_typeProperties_servicePrincipalId')]"
+					},
+					"AzureMLService1_properties_typeProperties_tenant": {
+						"value": "[parameters('AzureMLService1_properties_typeProperties_tenant')]"
+					},
+					"GetList_properties_typeProperties_functionAppUrl": {
+						"value": "[parameters('GetList_properties_typeProperties_functionAppUrl')]"
+					},
+					"RestService1_properties_typeProperties_url": {
+						"value": "[parameters('RestService1_properties_typeProperties_url')]"
+					},
+					"martin_raw_properties_typeProperties_url": {
+						"value": "[parameters('martin_raw_properties_typeProperties_url')]"
+					},
+					"meteringraw_properties_typeProperties_url": {
+						"value": "[parameters('meteringraw_properties_typeProperties_url')]"
+					},
+					"movies_lake_properties_typeProperties_url": {
+						"value": "[parameters('movies_lake_properties_typeProperties_url')]"
+					},
+					"renatls_lake_csv_properties_typeProperties_url": {
+						"value": "[parameters('renatls_lake_csv_properties_typeProperties_url')]"
+					},
+					"sales_lake_properties_typeProperties_url": {
+						"value": "[parameters('sales_lake_properties_typeProperties_url')]"
+					},
+					"sample_functions_properties_typeProperties_functionAppUrl": {
+						"value": "[parameters('sample_functions_properties_typeProperties_functionAppUrl')]"
+					},
+					"source_lake_properties_typeProperties_url": {
+						"value": "[parameters('source_lake_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "ydfactory_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"source_sales_connectionString": {
+						"value": "[parameters('source_sales_connectionString')]"
+					},
+					"source_streaming_connectionString": {
+						"value": "[parameters('source_streaming_connectionString')]"
+					},
+					"streaming_lake_accountKey": {
+						"value": "[parameters('streaming_lake_accountKey')]"
+					},
+					"ydsqlserver_address_connectionString": {
+						"value": "[parameters('ydsqlserver_address_connectionString')]"
+					},
+					"streaming_lake_properties_typeProperties_url": {
+						"value": "[parameters('streaming_lake_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ydfactory_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "ydfactory_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ydfactory_ArmTemplate_1')]"
+			]
+		},
+		{
+			"name": "ydfactory_ArmTemplate_3",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_3.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"FileServer1_password": {
+						"value": "[parameters('FileServer1_password')]"
+					},
+					"file_vm_password": {
+						"value": "[parameters('file_vm_password')]"
+					},
+					"source_vanarse_connectionString": {
+						"value": "[parameters('source_vanarse_connectionString')]"
+					},
+					"FileServer1_properties_typeProperties_host": {
+						"value": "[parameters('FileServer1_properties_typeProperties_host')]"
+					},
+					"FileServer1_properties_typeProperties_userId": {
+						"value": "[parameters('FileServer1_properties_typeProperties_userId')]"
+					},
+					"file_vm_properties_typeProperties_host": {
+						"value": "[parameters('file_vm_properties_typeProperties_host')]"
+					},
+					"file_vm_properties_typeProperties_userId": {
+						"value": "[parameters('file_vm_properties_typeProperties_userId')]"
+					},
+					"ydatalake_properties_privateLinkResourceId": {
+						"value": "[parameters('ydatalake_properties_privateLinkResourceId')]"
+					},
+					"ydatalake_properties_groupId": {
+						"value": "[parameters('ydatalake_properties_groupId')]"
+					},
+					"ydatalake_properties_fqdns": {
+						"value": "[parameters('ydatalake_properties_fqdns')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ydfactory_ArmTemplate_2')]"
+			]
+		},
+		{
+			"name": "ydfactory_ArmTemplate_4",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_4.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureFunction2_functionKey": {
+						"value": "[parameters('AzureFunction2_functionKey')]"
+					},
+					"ydatalake_accountKey": {
+						"value": "[parameters('ydatalake_accountKey')]"
+					},
+					"AzureFunction2_properties_typeProperties_functionAppUrl": {
+						"value": "[parameters('AzureFunction2_properties_typeProperties_functionAppUrl')]"
+					},
+					"ydatalake_properties_typeProperties_url": {
+						"value": "[parameters('ydatalake_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ydfactory_ArmTemplate_3')]"
+			]
+		},
+		{
+			"name": "ydfactory_ArmTemplate_5",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_5.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ydfactory_ArmTemplate_4')]"
+			]
+		}
+	]
+}
