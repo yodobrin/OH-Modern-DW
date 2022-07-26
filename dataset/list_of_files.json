@@ -1,0 +1,41 @@
+{
+	"name": "list_of_files",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "nolake",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "dropped_files.json",
+				"container": "source"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"droppedFilesId": {
+					"type": "string"
+				},
+				"FactoryId": {
+					"type": "integer"
+				},
+				"FileLocation": {
+					"type": "string"
+				},
+				"DataModelName": {
+					"type": "string"
+				},
+				"UpdateDate": {
+					"type": "string"
+				},
+				"Processed": {
+					"type": "boolean"
+				}
+			}
+		}
+	}
+}
