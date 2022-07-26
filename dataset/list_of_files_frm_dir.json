@@ -1,0 +1,17 @@
+{
+	"name": "list_of_files_frm_dir",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "nolake",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "source"
+			}
+		}
+	}
+}
