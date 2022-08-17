@@ -1,0 +1,80 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "address",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				},
+				{
+					"dataset": {
+						"referenceName": "address",
+						"type": "DatasetReference"
+					},
+					"name": "source2"
+				}
+			],
+			"sinks": [],
+			"transformations": [
+				{
+					"name": "join1"
+				},
+				{
+					"name": "select1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          AddressID as string,",
+				"          StreetName as string,",
+				"          StreetNumber as string,",
+				"          Longtitude as string,",
+				"          Latitude as string,",
+				"          City as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     isolationLevel: 'READ_UNCOMMITTED',",
+				"     format: 'table') ~> source1",
+				"source(output(",
+				"          AddressID as string,",
+				"          StreetName as string,",
+				"          StreetNumber as string,",
+				"          Longtitude as string,",
+				"          Latitude as string,",
+				"          City as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     isolationLevel: 'READ_UNCOMMITTED',",
+				"     format: 'table') ~> source2",
+				"source1, source2 join(source1@AddressID == source2@AddressID,",
+				"     joinType:'right',",
+				"     matchType:'exact',",
+				"     ignoreSpaces: false,",
+				"     broadcast: 'auto')~> join1",
+				"join1 select(mapColumn(",
+				"          AddressID = source1@AddressID,",
+				"          StreetName = source1@StreetName,",
+				"          StreetNumber = source1@StreetNumber,",
+				"          Longtitude = source1@Longtitude,",
+				"          Latitude = source1@Latitude,",
+				"          City = source1@City,",
+				"          AddressID = source2@AddressID,",
+				"          StreetName = source2@StreetName,",
+				"          StreetNumber = source2@StreetNumber,",
+				"          Longtitude = source2@Longtitude,",
+				"          Latitude = source2@Latitude,",
+				"          City = source2@City",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> select1"
+			]
+		}
+	}
+}
