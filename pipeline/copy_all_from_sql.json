@@ -124,6 +124,9 @@
 						}
 					}
 				]
+			},
+			"testdv": {
+				"type": "string"
 			}
 		},
 		"annotations": []
